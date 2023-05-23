@@ -11,11 +11,10 @@ def home_page():
 @app.route('/user/',methods=['GET'])
 def request_page():
     user_query=str(request.args.get('ip'))  #user/?ip=something  
-    hostname=socket.gethostname()   
-    IPAddr=socket.gethostbyname(hostname)   
-    data_set={'Page': 'Amex' , 'Message':f'User said=  {user_query}  ','Host name is':f'{hostname}', 'IP address':f'{IPAddr} '}
+    hostname=socket.gethostname()    
+    data_set={'Page': 'Amex' , 'Message':f'User said=  {user_query}  ','Host name is':f'{hostname}'}
     json_dump= json.dumps(data_set)
     return json_dump
 
 if __name__== '__main__':
-    app.run(port=8069)
+    app.run(port=8044)
